@@ -11,6 +11,7 @@ isort = "^5.10.1"
 black = "^22.1.0"
 make = "^0.1.6"
 Django = "^4.0.2"
+flake8-docstrings = "^1.6.0"
 
 [tool.poetry.dev-dependencies]
 
