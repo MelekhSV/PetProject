@@ -1,22 +1,18 @@
 name: CI
-
 on:
   push:
-    branches: [master]
-  pull_request:
-    branches: #
-
+    branches: [ master ]
+  pull_request: #
 jobs:
   Backend:
-    name: format, lint
+    name: Lint isort, black, flake8
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v1
       - name: install poetry
-        run: |
-            pip install poetry
-            poetry install
+        run:  |
+          pip install poetry
+          poetry install
       - name: lint
         run: |
           make lint
