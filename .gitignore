@@ -263,5 +263,4 @@ GitHub.sublime-settings
 !.vscode/extensions.json
 .history
 .idea
-node_modules
 static
