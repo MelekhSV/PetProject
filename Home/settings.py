@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'Project.urls'
+ROOT_URLCONF = 'Home.urls'
 
 TEMPLATES = [
     {
@@ -69,20 +69,16 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Project.wsgi.application'
+WSGI_APPLICATION = 'Home.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "PetProject",
-        "USER": "sergey",
-        "PASSWORD": "NewPassWord",
-        "HOST": "localhost",
-        "PORT": "5432"
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
