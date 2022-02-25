@@ -11,9 +11,8 @@ jobs:
       matrix:
         node-version: [10.x]
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - name: install Dependencis
-        working-directory: /frontend/home
         run: npm install
       - name: Lint
         uses: actions/setup-node@v2
