@@ -1,16 +1,33 @@
 name: CI
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request: #
 jobs:
+  Frontend:
+    name: Lint eslint, prettier
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x]
+    steps:
+      - uses: actions/checkout@v1
+      - name: install Dependencis
+        run: npm install
+      - name: Lint
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{matrix.node-version}}
+          working-directory: /frontend/home
+          run: npm run lint
+
   Backend:
     name: Lint isort, black, flake8
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - name: install poetry
-        run:  |
+        run: |
           pip install poetry
           poetry install
       - name: lint
