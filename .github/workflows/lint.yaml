@@ -12,15 +12,14 @@ jobs:
         node-version: [10.x]
     steps:
       - uses: actions/checkout@v2
-      - name: install Dependencis
-        working-directory: /frontend/home
-        run: npm install
       - name: Lint
         uses: actions/setup-node@v2
         with:
           node-version: ${{matrix.node-version}}
           working-directory: /frontend/home
-          run: npm run lint
+          run: |
+            npm install
+            npm run lint
 
   Backend:
     name: Lint isort, black, flake8
